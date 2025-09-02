@@ -3,6 +3,12 @@ import BellIcon from "@/components/icons/BellIcon";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { AccountSection } from "@/layout/navbar/AccountSection";
+import TrelloSection from "./TrelloSection";
+import Divider from "@/components/ui/Divider";
+import LogoutSection from "./LogOutSection";
+
+import ChevronRight from "@/components/icons/ChevronRight";
 function Navbar() {
   return (
     <nav className="flex justify-between items-center p-8  px-14">
@@ -10,7 +16,6 @@ function Navbar() {
         <div className=" ">
           <Image src="/trello-logo.png" alt="Logo" width={80} height={80} className="" />
         </div>
-
         <span className="text-2xl font-bold custom-tight">Trello</span>
       </div>
       <div className="flex gap-8 w-1/4 max-w-[400px] justify-between items-center">
@@ -26,21 +31,11 @@ function Navbar() {
             </Avatar>
           </PopoverTrigger>
           <PopoverContent>
-            <div className="flex flex-col  gap-4">
-              <h3 className="font-semibold text-xl">Account</h3>
-              <div className="flex items-center gap-4 mt-4">
-                <Avatar>
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="text-lg">Julien Deville</p>
-                  <p>julien.deville@example.com</p>
-                </div>
-              </div>
-              <div className="text-lg">Manage Account</div>
-            </div>
-            <div className="h-px w-full bg-border my-2" />
+            <AccountSection />
+            <Divider />
+            <TrelloSection />
+            <Divider />
+            <LogoutSection />
           </PopoverContent>
         </Popover>
       </div>

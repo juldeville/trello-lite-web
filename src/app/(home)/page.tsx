@@ -1,4 +1,4 @@
-import Navbar from "@/layout/Navbar";
+import Navbar from "@/layout/navbar/Navbar";
 import Sidebar from "@/layout/SideBar";
 import MainContent from "@/layout/home/MainContent";
 export default function Home() {
