@@ -1,0 +1,15 @@
+import Templates from "./Templates";
+import Boards from "./Boards";
+
+function MainContent() {
+  return (
+    <div className="p-8 md:p-16 bg-gray-surface flex flex-col h-full rounded-2xl shadow-xl ">
+      <div className="flex flex-col gap-44">
+        <Templates />
+        <Boards />
+      </div>
+    </div>
+  );
+}
+
+export default MainContent;
