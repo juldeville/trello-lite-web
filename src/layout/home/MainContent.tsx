@@ -1,3 +1,5 @@
+"use client";
+
 import Templates from "./Templates";
 import Boards from "./Boards";
 

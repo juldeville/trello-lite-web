@@ -44,6 +44,17 @@
   --color-gray-muted: #a9a9a9;
   --color-gray-subtle: #f0f0f0;
   --color-gray-surface: #f6f6f6;
+  --color-brand: #3547d3;
+
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
 }
 
 :root {
@@ -79,6 +90,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --brand: #3547d3;
 }
 
 .dark {
@@ -126,4 +138,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.bg-brand {
+  background-color: var(--brand);
 }
