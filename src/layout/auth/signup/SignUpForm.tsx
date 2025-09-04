@@ -75,7 +75,7 @@ export default function SignUpForm() {
           />
         </div>
         <div>
-          <Button type="submit" className="w-full mt-4" size="lg" disabled={isPending}>
+          <Button type="submit" className="w-full mt-4" size="lg">
             Sign Up
           </Button>
           {error && (
