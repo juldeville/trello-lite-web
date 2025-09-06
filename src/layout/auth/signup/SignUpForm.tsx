@@ -37,42 +37,15 @@ export default function SignUpForm() {
       <fieldset disabled={isPending} className="contents">
         <div className="flex flex-col gap-2 text-sm">
           <label htmlFor="username">Username</label>
-          <Input
-            id="username"
-            type="text"
-            placeholder="Enter your username"
-            required
-            className="rounded-lg"
-            onChange={handleChange}
-            name="username"
-            value={signUpData.username}
-          />
+          <Input id="username" type="text" placeholder="Enter your username" required className="rounded-lg" onChange={handleChange} name="username" value={signUpData.username} />
         </div>
         <div className="flex flex-col gap-2 text-sm">
           <label htmlFor="email">Email</label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="Enter your email"
-            required
-            className="rounded-lg"
-            onChange={handleChange}
-            name="email"
-            value={signUpData.email}
-          />
+          <Input id="email" type="email" placeholder="Enter your email" required className="rounded-lg" onChange={handleChange} name="email" value={signUpData.email} />
         </div>
         <div className="flex flex-col gap-2 text-sm">
           <label htmlFor="password">Password</label>
-          <Input
-            id="password"
-            type="password"
-            placeholder="Enter your password"
-            required
-            className="rounded-lg"
-            onChange={handleChange}
-            name="password"
-            value={signUpData.password}
-          />
+          <Input id="password" type="password" placeholder="Enter your password" required className="rounded-lg" onChange={handleChange} name="password" value={signUpData.password} />
         </div>
         <div>
           <Button type="submit" className="w-full mt-4" size="lg">

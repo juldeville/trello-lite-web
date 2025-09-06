@@ -1,38 +1,41 @@
-import { BASE_URL } from "@/constants";
 import { SignupDataForm, SignInDataForm } from "@/types/auth";
+import { apiFetch } from "./fetcher";
+import { clearToken, setToken } from "./tokenStore";
 
 async function signUp(dataForm: SignupDataForm) {
-  try {
-    const response = await fetch(`${BASE_URL}/auth/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(dataForm),
-    });
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    console.error("Error signing up:", err);
-    throw new Error("error fetching /auth/register");
+  const data = await apiFetch("/auth/register", {
+    method: "POST",
+    body: dataForm,
+    auth: false,
+  });
+
+  if (data?.accessToken) {
+    setToken(data.accessToken);
   }
+
+  console.log("signUp data:", data);
+  return data;
 }
 
 async function signIn(dataForm: SignInDataForm) {
-  try {
-    const response = await fetch(`${BASE_URL}/auth/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(dataForm),
-    });
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    console.error("Error signing in:", err);
-    throw new Error("error fetching /auth/login");
+  const data = await apiFetch("/auth/login", {
+    method: "POST",
+    body: dataForm,
+    auth: false,
+  });
+  if (data?.accessToken) {
+    setToken(data.accessToken);
   }
+  return data;
 }
 
-export { signUp, signIn };
+async function getCurrentUser() {
+  const data = await apiFetch("/auth/current");
+  return data;
+}
+
+async function logout() {
+  await apiFetch("/auth/logout", { method: "POST", auth: false });
+  clearToken();
+}
+export { signUp, signIn, getCurrentUser, logout };
