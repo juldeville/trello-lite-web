@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { setToken, clearToken } from "../services/tokenStore";
 import { API } from "../constants";
 import { LoaderOne } from "@/components/ui/loader";
+import { log } from "console";
 function AuthInit({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
 
@@ -17,11 +18,14 @@ function AuthInit({ children }: { children: React.ReactNode }) {
         });
         if (!mounted) return;
         if (!response.ok) {
+          console.log("no cookies bitchas");
+
           clearToken();
           return;
         }
         const { accessToken } = await response.json();
         accessToken ? setToken(accessToken) : clearToken();
+        console.log("Access token set");
       } catch {
         clearToken();
       } finally {

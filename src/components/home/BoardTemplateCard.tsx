@@ -13,7 +13,7 @@ function BoardTemplateCard({ templateImage, title }: BoardTemplateCardProps) {
       <div className="relative w-full h-40 md:h-48 overflow-hidden rounded-t-lg">
         <Image src={`/${templateImage}`} alt="Board Image" fill className="object-cover" />
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-          <h2 className="text-white text-xl font-bold drop-shadow-lg">{title}</h2>
+          <h2 className="text-white font-bold drop-shadow-lg">{title}</h2>
         </div>
       </div>
     </div>

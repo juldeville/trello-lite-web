@@ -12,9 +12,9 @@ function SignUpPage() {
       </div>
       <div className="w-1/2 flex flex-col items-center justify-around">
         <LogoSection />
-        <div className="w-full p-20 flex flex-col gap-12 items-center">
+        <div className="w-full p-20 flex flex-col gap-10 items-center">
           <div className="flex flex-col gap-4 items-center">
-            <h2 className="text-5xl font-bold">Create your account</h2>
+            <h2 className="text-3xl 2xl:text-4xl font-bold">Create your account</h2>
             <p>Create your username, email and password to access your account</p>
           </div>
           <SignUpForm />

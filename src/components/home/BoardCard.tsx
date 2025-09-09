@@ -6,7 +6,7 @@ function BoardCard() {
       <div className="relative w-full h-40 md:h-48 overflow-hidden rounded-t-lg">
         <Image src="/neonCircles.png" alt="Board Image" fill className="object-cover" />
       </div>
-      <h3 className="text-lg font-semibold p-4">Board Title</h3>
+      <h3 className=" font-semibold p-4">Board Title</h3>
     </div>
   );
 }

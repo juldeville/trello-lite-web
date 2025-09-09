@@ -26,7 +26,7 @@ export default function SignInForm() {
 
   return (
     <form
-      className="flex flex-col gap-12 mt-10 2xl:w-1/2 w-full max-w-[600px]"
+      className="flex flex-col gap-8  2xl:w-1/2 w-full max-w-[600px]"
       onSubmit={(e) => {
         e.preventDefault();
         mutate(signInData);
@@ -35,32 +35,14 @@ export default function SignInForm() {
       <fieldset disabled={isPending} className="contents">
         <div className="flex flex-col gap-2 text-sm">
           <label htmlFor="email">Email</label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="Enter your email"
-            required
-            className="rounded-lg"
-            onChange={handleChange}
-            name="email"
-            value={signInData.email}
-          />
+          <Input id="email" type="email" placeholder="Enter your email" required className="rounded-lg" onChange={handleChange} name="email" value={signInData.email} />
         </div>
         <div className="flex flex-col gap-2 text-sm">
           <label htmlFor="password">Password</label>
-          <Input
-            id="password"
-            type="password"
-            placeholder="Enter your password"
-            required
-            className="rounded-lg"
-            onChange={handleChange}
-            value={signInData.password}
-            name="password"
-          />
+          <Input id="password" type="password" placeholder="Enter your password" required className="rounded-lg" onChange={handleChange} value={signInData.password} name="password" />
         </div>
         <div>
-          <Button type="submit" className="w-full mt-4" size="lg">
+          <Button type="submit" className="w-full mt-6" size="lg">
             Sign In
           </Button>
           {error && (

@@ -18,9 +18,9 @@ function Sidebar() {
   return (
     <div className=" flex flex-col gap-12 p-8 md:p-16 ">
       <ul className="flex flex-col gap-12">
-        <li className="flex items-center gap-6">
+        {/* <li className="flex items-center gap-6">
           <NavBarLink href="/" label="Home" icon={HomeIcon} />
-        </li>
+        </li> */}
         <li className="flex items-center gap-6">
           <NavBarLink href="/boards" label="Boards" icon={TableIcon} />
         </li>

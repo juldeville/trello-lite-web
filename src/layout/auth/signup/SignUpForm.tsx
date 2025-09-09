@@ -28,7 +28,7 @@ export default function SignUpForm() {
   });
   return (
     <form
-      className="flex flex-col gap-12 mt-10 2xl:w-1/2 w-full max-w-[600px]"
+      className="flex flex-col gap-8  2xl:w-1/2 w-full max-w-[600px]"
       onSubmit={(e) => {
         e.preventDefault();
         mutate(signUpData);
@@ -48,7 +48,7 @@ export default function SignUpForm() {
           <Input id="password" type="password" placeholder="Enter your password" required className="rounded-lg" onChange={handleChange} name="password" value={signUpData.password} />
         </div>
         <div>
-          <Button type="submit" className="w-full mt-4" size="lg">
+          <Button type="submit" className="w-full  mt-6" size="lg">
             Sign Up
           </Button>
           {error && (
