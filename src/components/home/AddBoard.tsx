@@ -1,8 +1,10 @@
 import Image from "next/image";
 import PlusIcon from "../icons/PlusIcon";
-function AddBoard() {
+import type { BoardCreateRequest } from "@/types/boards";
+
+function AddBoard({ openModal }: { openModal: () => void }) {
   return (
-    <div className="w-48 md:w-96 bg-white shadow-md hover:shadow-lg transition-shadow rounded-lg cursor-pointer flex items-center justify-center h-[251px] ">
+    <div className="w-64 h-40 md:h-full bg-white shadow-md hover:shadow-lg transition-shadow rounded-lg cursor-pointer flex items-center justify-center" onClick={openModal}>
       <PlusIcon />
     </div>
   );

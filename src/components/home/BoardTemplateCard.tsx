@@ -9,11 +9,11 @@ interface BoardTemplateCardProps {
 
 function BoardTemplateCard({ templateImage, title }: BoardTemplateCardProps) {
   return (
-    <div className="w-96 bg-white shadow-md rounded-lg cursor-pointer overflow-hidden">
-      <div className="relative w-full h-40 md:h-48 overflow-hidden rounded-t-lg">
+    <div className="w-64 bg-white shadow-md rounded-lg cursor-pointer  overflow-hidden">
+      <div className="relative w-full  h-30 md:h-34 overflow-hidden rounded-t-lg">
         <Image src={`/${templateImage}`} alt="Board Image" fill className="object-cover" />
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-          <h2 className="text-white font-bold drop-shadow-lg">{title}</h2>
+          <h2 className="text-white font-bold drop-shadow-lg text-sm">{title}</h2>
         </div>
       </div>
     </div>

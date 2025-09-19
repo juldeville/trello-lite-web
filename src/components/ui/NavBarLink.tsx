@@ -12,7 +12,7 @@ function NavBarLink({ href, label, icon: Icon }: { href: string; label: string; 
       className={isActive ? " text-primary flex justify-center items-center p-2 rounded font-semibold gap-4" : "text-gray-muted flex justify-center items-center p-2 rounded font-semibold gap-4"}
     >
       <Icon />
-      <div className="">{label}</div>
+      <div className="text-sm">{label}</div>
     </Link>
   );
 }

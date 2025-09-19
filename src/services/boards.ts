@@ -1,19 +1,18 @@
 import { apiFetch } from "./fetcher";
+import type { BoardCreateRequest } from "@/types/boards";
 
 const getBoards = async () => {
-  console.log("Fetching boards...");
   const response = await apiFetch("/boards");
-  console.log("Fetched boards:", response);
   return response.boards;
 };
 
-// export const createBoard = async (boardData) => {
-//   const response = await apiFetch("/api/boards/new", {
-//     method: "POST",
-//     body: JSON.stringify(boardData),
-//   });
-//   return response;
-// };
+const createBoard = async (boardData: BoardCreateRequest) => {
+  const response = await apiFetch("/boards/new", {
+    method: "POST",
+    body: boardData,
+  });
+  return response;
+};
 
 // export const updateBoard = async (boardId, boardData) => {
 //   const response = await apiFetch(`/api/boards/update/${boardId}`, {
@@ -30,4 +29,4 @@ const getBoards = async () => {
 //   return response;
 // };
 
-export { getBoards };
+export { getBoards, createBoard };

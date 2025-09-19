@@ -23,7 +23,7 @@ export default function SignUpForm() {
     mutationFn: (payload: SignupDataForm) => signUp(payload),
     onSuccess: (response) => {
       console.log(response);
-      router.push("/boards");
+      router.push("/home");
     },
   });
   return (

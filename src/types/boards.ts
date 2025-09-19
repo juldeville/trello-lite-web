@@ -12,5 +12,5 @@ export interface BoardCardProps {
 
 export interface BoardCreateRequest {
   name: string;
-  members?: string[];
+  members: string[];
 }

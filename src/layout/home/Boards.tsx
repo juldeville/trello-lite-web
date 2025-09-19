@@ -4,13 +4,25 @@ import { useQuery } from "@tanstack/react-query";
 import { getBoards } from "@/services/boards";
 import { LoaderFive } from "@/components/ui/loader";
 import type { Board } from "@/types/boards";
+import { useModal } from "@/hooks/useModal";
+import BoardModal from "@/components/home/BoardModal";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { createBoard } from "@/services/boards";
+
 function Boards() {
-  const { isPending, isError, data, error } = useQuery({
+  const boardModal = useModal();
+
+  const {
+    isPending: isBoardsLoading,
+    isError,
+    data,
+    error,
+  } = useQuery({
     queryKey: ["boards"],
     queryFn: getBoards,
   });
 
-  if (isPending) {
+  if (isBoardsLoading) {
     return (
       <div className="flex justify-center items-center h-32">
         <LoaderFive text="Loading boards..." />
@@ -28,7 +40,8 @@ function Boards() {
       <h2 className="text-xl font-bold">Your Boards</h2>
       <div className="flex gap-6 flex-wrap">
         {boards}
-        <AddBoard />
+        <AddBoard openModal={boardModal.openModal} />
+        <BoardModal {...boardModal} />
       </div>
     </div>
   );
